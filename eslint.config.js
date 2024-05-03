@@ -11,6 +11,11 @@ const compat = new FlatCompat();
 
 export default tseslint.config(
   {
+    ignores: [
+      'dist'
+    ]
+  },
+  {
     files: ['src/**/*.{ts,tsx}'],
     plugins: {
       import: importPlugin,
