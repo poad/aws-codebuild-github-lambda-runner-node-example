@@ -16,15 +16,15 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^9.24.0",
+    "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-solid": "^0.14.5",
-    "pnpm": "^10.8.1",
+    "pnpm": "^10.9.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.30.1",
+    "typescript-eslint": "^8.31.0",
     "vite": "^6.3.2",
     "vite-plugin-solid": "^2.11.6"
   },
@@ -32,5 +32,5 @@
     "@solidjs/router": "^0.15.3",
     "solid-js": "^1.9.5"
   },
-  "packageManager": "pnpm@10.8.1"
+  "packageManager": "pnpm@10.9.0"
 }
