@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: codebuild-codebuild-gha-lambda-runner-example-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - uses: oven-sh/setup-bun@v2
 
