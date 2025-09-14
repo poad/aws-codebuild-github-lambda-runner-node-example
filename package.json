@@ -21,7 +21,7 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-solid": "^0.14.5",
-    "pnpm": "^10.16.0",
+    "pnpm": "^10.16.1",
     "prettier": "^3.6.2",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.43.0",
@@ -32,5 +32,5 @@
     "@solidjs/router": "^0.15.3",
     "solid-js": "^1.9.9"
   },
-  "packageManager": "pnpm@10.16.0"
+  "packageManager": "pnpm@10.16.1"
 }
