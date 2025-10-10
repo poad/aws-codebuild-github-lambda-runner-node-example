@@ -4,7 +4,7 @@ import { lazy } from 'solid-js';
 
 import App from './App';
 import { Router, Route } from '@solidjs/router';
-const About = lazy(() => import('./pages/about'));
+const About = lazy(() => import('./pages/about.js'));
 
 render(
   () => (

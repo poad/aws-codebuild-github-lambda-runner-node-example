@@ -1,30 +1,35 @@
-// @ts-check
-
+import { defineConfig } from 'eslint/config';
+import { configs, parser } from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import solid from 'eslint-plugin-solid';
-import tseslint from 'typescript-eslint';
-import { FlatCompat } from '@eslint/eslintrc';
 import importPlugin from 'eslint-plugin-import';
 
-const compat = new FlatCompat();
-
-export default tseslint.config(
+export default defineConfig(
   {
     ignores: [
-      'dist'
+      'dist',
+      'bun.lock',
     ]
   },
+  ...configs.strict,
+  ...configs.stylistic,
+  eslintConfigPrettier,
   {
     files: ['src/**/*.{ts,tsx}'],
+    ...solid,
     plugins: {
       import: importPlugin,
-      solid,
     },
     extends: [
-      ...tseslint.configs.recommended,
-      ...compat.config(importPlugin.configs.recommended),
-      ...compat.config(importPlugin.configs.typescript),
+      importPlugin.flatConfigs.recommended,
+      importPlugin.flatConfigs.typescript,
     ],
+    languageOptions: {
+      parser,
+      parserOptions: {
+        project: "tsconfig.json",
+      },
+    },
     settings: {
       'import/internal-regex': '^~/',
       'import/resolver': {
@@ -36,15 +41,6 @@ export default tseslint.config(
         },
       },
     },
-  },
-  {
-    rules: {
-      semi: ["error", "always"],
-    },
-  },
-  ...tseslint.configs.recommended,
-  eslintConfigPrettier,
-  {
     rules: {
       'react/display-name': 'off',
       'import/namespace': 'off',

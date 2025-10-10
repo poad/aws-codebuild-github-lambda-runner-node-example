@@ -1,7 +1,7 @@
 import { lazy } from 'solid-js';
 import { A } from '@solidjs/router';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const About = lazy(() => import('./pages/about'));
+const About = lazy(() => import('./pages/about.js'));
 
 export default function App() {
   return (
