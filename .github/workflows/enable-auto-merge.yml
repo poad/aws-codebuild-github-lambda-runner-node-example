@@ -13,7 +13,7 @@ jobs:
   pull-request-auto-merge:
     runs-on: codebuild-codebuild-gha-lambda-runner-example-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
 
     - name: Pull request auto merge enabler
       uses: poad/github-pull-request-auto-merge-enable-action@v3
