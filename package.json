@@ -32,5 +32,5 @@
     "@solidjs/router": "^0.16.1",
     "solid-js": "^1.9.12"
   },
-  "packageManager": "pnpm@10.33.3"
+  "packageManager": "pnpm@11.0.8"
 }
