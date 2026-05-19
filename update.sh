@@ -14,9 +14,8 @@ if [ $result -ne 0 ]; then
 fi
 echo ""
 pwd
-npx -y pnpm@latest self-update && rm -rf node_modules && pnpm up && pnpm audit --fix override && pnpm up && pnpm lint-fix && pnpm build
-result=$?
-if [ $result -ne 0 ]; then
+
+if ! (pnpm dlx pnpm@latest self-update && rm -rf node_modules && pnpm up && pnpm audit --fix override && pnpm up && pnpm lint-fix && pnpm build); then
   cd "${CUR}" || exit
   exit $result
 fi
