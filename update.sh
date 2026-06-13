@@ -6,24 +6,22 @@ CURRENT=$(cd "$(dirname $0)" || exit;pwd)
 echo "${CURRENT}"
 
 cd "${CURRENT}" || exit
-git pull --prune
-result=$?
-if [ $result -ne 0 ]; then
+
+if ! (git pull --prune); then
   cd "${CUR}" || exit
-  exit $result
+  exit 1
 fi
 echo ""
 pwd
 
-if ! (pnpm dlx pnpm@latest self-update && rm -rf node_modules && pnpm up && pnpm audit --fix override && pnpm up && pnpm lint-fix && pnpm build); then
+if ! (pnx pnpm@latest self-update && rm -rf node_modules pnpm-lock.yaml && pnpm up && pnpm audit --fix override && pnpm up && pnpm lint-fix && pnpm build); then
   cd "${CUR}" || exit
-  exit $result
+  exit 1
 fi
-git commit -am "Bumps node modules" && git push
-result=$?
-if [ $result -ne 0 ]; then
+
+if ! (git commit -am "Bumps node modules" && git push); then
   cd "${CUR}" || exit
-  exit $result
+  exit 1
 fi
 
 cd "${CUR}" || exit
