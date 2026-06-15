@@ -1,4 +1,4 @@
-import { defineConfig } from 'eslint/config';
+import { defineConfig, includeIgnoreFile } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { parser, configs } from 'typescript-eslint';
@@ -6,7 +6,6 @@ import importPlugin from 'eslint-plugin-import';
 
 import solid from "eslint-plugin-solid/configs/typescript";
 
-import { includeIgnoreFile } from '@eslint/compat';
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
