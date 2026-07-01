@@ -7,12 +7,9 @@ allowBuilds:
 blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
-minimumReleaseAgeExclude:
-  - pnpm@11.8.0
 
 overrides:
   chokidar: '>=5'
-  eslint-import-resolver-typescript: '>=4'
   semver: '>=7'
   vite@>=7.0.0 <=7.3.1: '>=7.3.2'
   vite@>=8.0.0 <=8.0.4: '>=8.0.5'
